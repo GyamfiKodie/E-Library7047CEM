@@ -1,0 +1,70 @@
+// UserLogin App.java
+package com.javatechie.UserLogin;
+import java.util.HashMap;
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+	/*
+	HashMap<String, String> users = new HashMap<String,String>();
+	
+	String returned_value = (String)users.put("admin@elibrary.com","pop@123");
+    */
+	
+	public boolean registerUser(String name,String email,String phone,String address,String password,String country) {
+		if(name != null && email != null && phone != null && address != null && password != null && country != null) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+	/*
+    public boolean isUserLogin(String username,String password)
+	{
+		if(users.containsKey(username)) {
+			String storedPassword = users.get(username);
+			return storedPassword.equals(password);
+		}
+		return false; 
+	}*/
+    
+}
+
+// UserLogin AppTest.java 
+
+package com.javatechie.UserLogin;
+
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
+import org.junit.Test;
+/**
+ * Unit test for simple App.
+ */
+public class AppTest 
+{
+    /**
+     * Rigorous Test :-)
+     */
+	
+	App app = new App();
+	
+	String name = "ABC";
+	String email = "nividhamu195@gmail.com";
+	String phone = "1234567890";
+	String address = "Flat 1, ABC Road, London,United Kingdom";
+	String password = "9876";
+	String country = "India";
+	
+	@Test
+	public void isRegistered() {
+		assertTrue(app.registerUser(name,email,phone,address,password,country));
+	}
+	
+	@Test
+	public void isNotRegistered() {
+		assertFalse(app.registerUser(null,email, phone, address, password, country));
+	}
+}
+
